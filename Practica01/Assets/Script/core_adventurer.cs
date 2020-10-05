@@ -10,8 +10,9 @@ using UnityEngine.SceneManagement;
 public class core_adventurer : MonoBehaviour
 {
     // Mas claes una flotante y otra bool, una expresa el movvimiento y sus unidades y la otra es del piso donde solo sera true y false
-    public float movVel = 5f;
+    public float movVel = 0.01f;
     public bool enelPiso = false;
+    
     
     // Da de alta la variable Animator anima
     private Animator anima;
@@ -25,6 +26,7 @@ public class core_adventurer : MonoBehaviour
     // Update is called once per frame.. lo que estara en cada frame
     void Update()
     {
+  
         //Condicion donde piso es falso y el bool sera falso
         if(enelPiso == false)
         {
@@ -48,6 +50,7 @@ public class core_adventurer : MonoBehaviour
         Vector3 movimiento = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f); 
         //Es para el movimiento que se va a sumar la posicion con el mov y este se va a mult por el tiempo
         transform.position += movimiento * Time.deltaTime * movVel;
+
 
         //Se da de alta salto
         Salto();
